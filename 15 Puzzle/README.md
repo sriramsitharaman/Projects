@@ -10,10 +10,9 @@ Intial state
 ------------
 4*4 dimensional input board with 15 tiles and a empty tile_locations
 
-Succ(board)
+Successors
 -----------
-All possible successors of the board that is achieved by sliding a
-   single tile from one cell into an empty cell, in this variant, either one, two, or three tiles may be slid
+All possible successors of the board that is achieved by sliding a single tile from one cell into an empty cell, in this variant, either one, two, or three tiles may be slid
    left, right, up or down in a single move. 
 
 Goal state
@@ -34,8 +33,11 @@ Heuristic
    - A partial pattern of size 4 was taken , For instance below is one of the partial pattern
 
    `1 2 - -` 
+
    `5 6 - - `
+
    `- - - -`
+
    `- - - 0`
    
    - A backwards BFS is done on the partial pattern where the successors are the admissible next step boards as stated in the problem

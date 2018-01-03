@@ -5,26 +5,37 @@ board, if one exists. If the initial board is not solvable, the script returns "
 
 Abstraction
 -----------
-#Intial state: 4*4 dimensional input board with 15 tiles and a empty tile_locations
 
-#Succ(board): All possible successors of the board that is achieved by sliding a
+Intial state
+------------
+4*4 dimensional input board with 15 tiles and a empty tile_locations
+
+Succ(board)
+-----------
+All possible successors of the board that is achieved by sliding a
    single tile from one cell into an empty cell, in this variant, either one, two, or three tiles may be slid
    left, right, up or down in a single move. 
 
-Goal state: solved 4*4 goal board with tiles from 1 to 15 in order followed by the empty tile(0) at last
+Goal state
+----------
+solved 4*4 goal board with tiles from 1 to 15 in order followed by the empty tile(0) at last
 
-#Algorithm: A* Search
+Algorithm
+----------
+   - A* Search
    - Implemeted using Priority queue with the priority being g(n)+h(n) where h(n) is the heuristic from the Max Pattern database
    - Includes a seen dictionary with the key as a hashvalue of the board to check and ignore revisting the same boards
-#Heuristic: Max Pattern database
+Heuristic
+---------
+   - Max Pattern database
    Reference - Searching with Pattern Databases,Joseph C. Culberson and Jonathan Schaeffer (pg. 402 - 415)
    - 4 Pattern databases were built parallel using multiprocessing (patternDBGenerator.py)
    - A partial pattern of size 4 was taken , For instance below is one of the partial pattern
 
-   #1 2 - - 
-   #5 6 - - 
-   #- - - -
-   #- - - 0
+   "1 2 - - 
+   5 6 - - 
+   - - - -
+   - - - 0"
    
    - A backwards BFS is done on the partial pattern where the successors are the admissible next step boards as stated in the problem
    - A step cost of 1 is incremented for each level of the BFS tree

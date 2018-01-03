@@ -1,4 +1,4 @@
-# 15 Puzzle solver
+15 Puzzle solver
 ------------------
 Given a initial board configuration, this script tries to identify the optimal path for the solved goal_board
 board, if one exists. If the initial board is not solvable, the script returns "Given Initial Board is not Solvable!Solvability of the board is done by checking if the provided board has a even parity(sum of permutations inversions for each numbered tile except 0+row position of '0' tile)

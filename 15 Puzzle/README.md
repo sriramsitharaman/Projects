@@ -31,15 +31,16 @@ Heuristic
    Reference - Searching with Pattern Databases,Joseph C. Culberson and Jonathan Schaeffer (pg. 402 - 415)
    - 4 Pattern databases were built parallel using multiprocessing (patternDBGenerator.py)
    - A partial pattern of size 4 was taken , For instance below is one of the partial pattern
+   ```
 
-   `1 2 - -` 
+       1 2 - -     
 
-   `5 6 - - `
+       5 6 - -     
 
-   `- - - -`
+       - - - -    
 
-   `- - - 0`
-   
+       - - - 0    
+   ```
    - A backwards BFS is done on the partial pattern where the successors are the admissible next step boards as stated in the problem
    - A step cost of 1 is incremented for each level of the BFS tree
    - The Final database contains all possible permutations of the above pattern and the actual cost to reach the above initial partial pattern

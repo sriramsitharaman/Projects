@@ -1,31 +1,31 @@
-#15 Puzzle solver
+# 15 Puzzle solver
 ------------------
 Given a initial board configuration, this script tries to identify the optimal path for the solved goal_board
 board, if one exists. If the initial board is not solvable, the script returns "Given Initial Board is not Solvable!Solvability of the board is done by checking if the provided board has a even parity(sum of permutations inversions for each numbered tile except 0+row position of '0' tile)
 
-##Abstraction
+## Abstraction
 -----------
 
-###Intial state
+### Intial state
 ------------
 4*4 dimensional input board with 15 tiles and a empty tile_locations
 
-###Successors
+### Successors
 -----------
 All possible successors of the board that is achieved by sliding a single tile from one cell into an empty cell, in this variant, either one, two, or three tiles may be slid
    left, right, up or down in a single move. 
 
-###Goal state
+### Goal state
 ----------
 solved 4*4 goal board with tiles from 1 to 15 in order followed by the empty tile(0) at last
 
-###Algorithm
+### Algorithm
 ----------
    - A* Search
    - Implemented using Priority queue with the priority being g(n)+h(n) where h(n) is the heuristic from the Max Pattern database
    - Includes a seen dictionary with the key as a hashvalue of the board to check and ignore revisting the same boards
 
-###Heuristic
+### Heuristic
 ---------
    - Max Pattern database
    Reference - Searching with Pattern Databases,Joseph C. Culberson and Jonathan Schaeffer (pg. 402 - 415)

@@ -23,8 +23,9 @@ solved 4*4 goal board with tiles from 1 to 15 in order followed by the empty til
 Algorithm
 ----------
    - A* Search
-   - Implemeted using Priority queue with the priority being g(n)+h(n) where h(n) is the heuristic from the Max Pattern database
+   - Implemented using Priority queue with the priority being g(n)+h(n) where h(n) is the heuristic from the Max Pattern database
    - Includes a seen dictionary with the key as a hashvalue of the board to check and ignore revisting the same boards
+
 Heuristic
 ---------
    - Max Pattern database
@@ -32,10 +33,10 @@ Heuristic
    - 4 Pattern databases were built parallel using multiprocessing (patternDBGenerator.py)
    - A partial pattern of size 4 was taken , For instance below is one of the partial pattern
 
-   "1 2 - - 
-   5 6 - - 
-   - - - -
-   - - - 0"
+   `1 2 - -` 
+   `5 6 - - `
+   `- - - -`
+   `- - - 0`
    
    - A backwards BFS is done on the partial pattern where the successors are the admissible next step boards as stated in the problem
    - A step cost of 1 is incremented for each level of the BFS tree
